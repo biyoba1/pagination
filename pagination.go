@@ -56,9 +56,10 @@ func main() {
 		items := make([]string, 0, pagination.ItemsPerPage)
 		for i := pagination.GetOffset(); i < pagination.GetOffset()+pagination.ItemsPerPage && i < pagination.TotalItems; i++ {
 			items = append(items, fmt.Sprintf("Item %d", i+1))
-			log.Printf("ОТКРЫТА СТРАНИЦА - %d", page)
 		}
-
+		
+		log.Printf("ОТКРЫТА СТРАНИЦА - %d", page)
+		
 		pageData := &PageData{
 			Items:      items,
 			Pagination: pagination,
